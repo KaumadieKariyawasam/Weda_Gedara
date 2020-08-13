@@ -1,0 +1,85 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-7 py-lg-7">
+              <div class="form-group">
+                <label> Upload profile picture</label>
+                <input type="file" id="$img" (change)="upload($event)" class="form-control" formControlName="image" accept=".png,.jpg">
+                
+              </div>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+               
+                <p> fullname</p>
+                  
+                <div class="form-group">
+                    <input formControlName="fullname"  name="fullname" value="{{fullname}}" class="form-control" type="text" required>
+                </div>
+              
+
+                <p>Telephone</p>
+                <div class="form-group">
+                  <input formControlName="telephone" class="form-control" value="{{telephone}}" type="text" [ngClass]="{'is-invalid':submitted && formControls.telephone.errors}" required>  
+                  <div class="invalid-feedback" *ngIf="submitted && formControls.telephone.errors">
+                    <div *ngIf="formControls.telephone.errors.minLength">Enter Correct Telephone</div>
+                  </div>
+                </div>
+
+                <p>Email</p>
+                <div class="form-group">
+                    <input formControlName="email" class="form-control"  value="{{email}}" type="text" disabled>  
+                </div>
+
+
+                <p>Address</p>
+                <div class="form-group">
+                   <input formControlName="address" class="form-control" value="{{address}}" type="text" required>
+                </div>
+
+                <p> Area</p>
+                <div class="form-group">
+                 <input formControlName="area" class="form-control" value="{{area}}" type="area" required>
+                </div>
+
+                <p>Add a Description</p>
+
+                <div class="form-group">
+                  <textarea formControlName="description" class="form-control"  value="{{description}}"></textarea>
+                </div>
+
+               
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+                <button class="btn btn-primary" (click)="goView()"> Back</button>
+                
+              </form>
+             
+
+
+            </div>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+

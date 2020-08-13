@@ -1,0 +1,107 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5),
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-muted text-center mb-3">
+                <img src="../../assets/img/weda-gedara-stack-logo.png" sizes="container pt-sm-sm" class="img-fluid">
+              </div>
+
+              <form (ngSubmit)="onSubmit(f)" #f=ngForm>
+                <h4 style="text-align: center; text-decoration: solid;">User SignUp</h4>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="name">Full Name*</label>
+                      <input type="text" id="name" class="form-control" name="name" [(ngModel)]="signUpInput.name" required>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="img">Image URL</label>
+                        <input type="file" id="img" class="form-control-file" name="img" (change)="onFileSelected($event)" [(ngModel)]="signUpInput.img" required>
+                      </div>
+                    </div>
+                  </div> -->
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="address">Address*</label>
+                      <input type="text" id="address" class="form-control" name="address" [(ngModel)]="signUpInput.address" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="area">Area*</label>
+                        <input type="text" id="area" class="form-control" name="area" [(ngModel)]="signUpInput.area" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="gender">Gender*</label><br>
+                        <div class="form-check form-check-inline">
+                          <input type="radio" name="gender" value="male" [(ngModel)]="signUpInput.gender" nic #nic="ngModel" required> Male &nbsp; &nbsp;<br>
+                          <input type="radio" name="gender" value="female" [(ngModel)]="signUpInput.gender" nic #nic="ngModel" required> Female<br>
+                          <!-- <span class="help-block" *ngIf="!gender.valid && gender.touched">This field is required</span> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="nic">NIC*</label>
+                        <input type="text" id="nic" class="form-control" name="nic" [(ngModel)]="signUpInput.nic" nic #nic="ngModel" required pattern="[0-9]{9}[vV]|[0-9]{10}">
+                        <span class="help-block" *ngIf="!nic.valid && nic.touched">Please enter a valid nic</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" class="form-control" name="email" [(ngModel)]="signUpInput.email" email #email="ngModel" required>
+                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="password">Password*</label>
+                        <input type="password" id="password" class="form-control" name="password" [(ngModel)]="signUpInput.password" required>
+                        <!-- <div *ngIf="password.invalid && password.touched" class="validation-error">This field is required.</div> -->
+                      </div>
+                    </div>
+                  </div>
+                <button type="submit">Sign up</button>
+                
+                <button type="reset" [disabled]="!f.touched">Clear</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

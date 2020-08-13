@@ -1,0 +1,238 @@
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/landing']">
+      <img src="./assets/img/brand/weda-gedara-horizontal-logo.png" >
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']" routerLinkActive="active">
+              <img src="./assets/img/brand/blue.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+          <li class="nav-item dropdown">
+              <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text" style="cursor: pointer">Blog</span>
+              </a>
+              <div class="dropdown-menu" style="cursor: pointer">
+                <!-- <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">Profile</a> -->
+                <!-- <a routerLinkActive="active" [routerLink]="['/login']" class="dropdown-item">Login</a> -->
+                <a routerLinkActive="active" [routerLink]="['/blog']" class="dropdown-item">View all Blogs</a>
+                <!-- <a [routerLink]="['/landing']" class="dropdown-item">Landing</a> -->
+                <!-- <a [routerLink]="['medicine']" class="dropdown-item">Profile</a> -->
+                <!-- <a [routerLink]="['/register']" class="dropdown-item">Register</a> -->
+                <!-- <a [routerLink]="['default']" class="dropdown-item">Admin</a> -->
+              </div>
+            </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text" style="cursor: pointer;">Search</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['doctor-search']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                  <i class="ni ni-spaceship"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Doctors</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Search for the doctor by name or the area you wanted.</p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['medicine']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Medical Suppliers</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Search for the Suppliers by name or the area you wanted.</p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['spa']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-ui-04"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h5 class="heading text-warning mb-md-1">Ayurvedic Spa</h5>
+                  <p class="description d-none d-md-inline-block mb-0">Search for the Ayurvedic Spa by name or the area you wanted.</p>
+                </div>
+              </a>
+              <!-- Doctor Channelling Menu in Navigation bar-->
+              <a routerLinkActive="active" [routerLink]="['doctor-channel-search']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-info rounded-circle text-white">
+                  <i class="ni ni-sound-wave"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-info mb-md-1">Doctors Channel</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Search for the doctor by name, specialization, area and date as per your requirement.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span routerLink class="nav-link-inner--text">Sign in</span>
+          </a>
+          <div class="dropdown-menu">
+              <a [routerLink]="['/register/doctor']" class="dropdown-item">As a Doctor</a>
+              <a [routerLink]="['/register']" class="dropdown-item">As a User</a>
+              <a [routerLink]="['/register/spa']" class="dropdown-item">As a Spa Owner</a>
+              <a [routerLink]="['/register/supplier']" class="dropdown-item">As a medical Supplier</a>
+          </div>
+        </li> -->
+        
+      </ul>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Accounts</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                  <i class="ni ni-spaceship"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Doctors</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/login/doctor']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/register/doctor']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Medical Suppliers</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/supplier-log']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/supplier-reg']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-ui-04"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h5 class="heading text-warning mb-md-1">Ayurvedic Spa</h5>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/spa-log']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/spa-reg']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">User</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/login']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/register']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              
+            </div>
+          </div>
+        </li>
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+
+            <!-- <span class="nav-link-inner--text">Login</span> -->
+            <span class="nav-link-inner--text" style="cursor:pointer" *ngIf="!auth.isAuthenticated()" style="text-transform: capitalize; cursor: pointer" (click)="onLogOut()">Log out</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                  <i class="ni ni-spaceship"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Doctors</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/login']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/register']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Medical Suppliers</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/login']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/register']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-ui-04"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h5 class="heading text-warning mb-md-1">Ayurvedic Spa</h5>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/spa-log']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/spa-reg']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">User</h6>
+                  <p class="description d-none d-md-inline-block mb-0"><a [routerLink]="['/login']" class="badge badge-pill badge-primary">Sign In</a><a [routerLink]="['/register']" class="badge badge-pill badge-primary" >Sign Up</a></p>
+                </div>
+              </a>
+            </div>
+          </div>
+      </ul>
+<!--
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+            <i class="fa fa-facebook-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+            <i class="fa fa-instagram"></i>
+            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+            <i class="fa fa-twitter-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Twitter</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">
+            <i class="fa fa-github"></i>
+            <span class="nav-link-inner--text d-lg-none">Github</span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-lg-block ml-lg-4">
+          <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar" target="_blank" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i class="fa fa-cloud-download mr-2"></i>
+            </span>
+            <span class="nav-link-inner--text">Download</span>
+          </a>
+        </li>
+      </ul>
+      -->
+
+    </div>
+  </div>
+</nav>

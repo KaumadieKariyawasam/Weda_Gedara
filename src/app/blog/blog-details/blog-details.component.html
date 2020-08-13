@@ -1,0 +1,45 @@
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="row row-grid align-items-center">
+        <div class="col-md-6">
+          <div class="card bg-default shadow border-0">
+            <img src="./../../../assets/img/project - Copy.JPG" class="card-img-top">
+            <blockquote class="card-blockquote">
+              <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                <polygon points="0,52 583,95 0,95" class="fill-default" />
+                <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
+              </svg>
+              <h4 class="display-3 font-weight-bold text-white"> {{ artical.title }} </h4>
+            </blockquote>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="pl-md-5">
+            <!-- <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+              <i class="ni ni-settings"></i>
+            </div> -->
+            <p class="lead"> {{ artical.title}} ID: {{ artical.Published }} </p>
+            <p> {{ artical.Content }} </p>
+            <!-- <p class="text-secondary"> {{ artical.published }} </p> -->
+          </div>
+
+          <div class="row">
+              <!-- toggle open doesnt work -->
+            <div class="col-xs-12">
+                  <div class="dropdown">
+                      <button type="button" class="btn btn-primary dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage Artical
+                          <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" style="cursor: pointer;">Read</a>
+                          <a class="dropdown-item"  style="cursor: pointer;" (click)="onEditArtical(artical)">Edit</a>
+                          <a class="dropdown-item" style="cursor: pointer;" (click)="onDeleteArtical()">Delete</a>
+                          <a class="dropdown-item" style="cursor: pointer;" (click)="onCancel()">Cancel</a>
+                        </div>
+                  </div>
+              </div>
+          </div>
+            <div class="pl-md-8">Description</div>
+          </div>
+        </div>
+

@@ -1,0 +1,36 @@
+<main>
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-hello" style="background-image:linear-gradient(
+        rgba(20,20,20, .5), 
+        rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-body px-lg-5 py-lg-5">
+
+                <form (ngSubmit)="resetPassword(f)" #f=ngForm>
+                  <div>
+                    <h4 class="txt text-capitalize text-center">recover the password</h4>
+                  </div>
+                  <div>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter a valid email" ngModel required>
+                  </div>
+                  <button type="submit" [disabled]="!f.valid" class="btn btn-danger">Reset Password</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

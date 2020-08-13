@@ -1,0 +1,117 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <h1 style="color: cornflowerblue; font: size 5px"><b>Sign Up</b></h1>
+              </div>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+               
+                <div class="form-group">
+                  
+                   
+                    <input formControlName="fullname"  name="fullname" placeholder="Full Name" class="form-control" type="text" [ngClass]="{'is-invalid':submitted && formControls.fullname.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && formControls.fullname.errors">This Field is Required</div>
+                </div>
+              
+                
+
+                <div class="form-group">
+                  
+                  
+                    <input formControlName="telephone" class="form-control" placeholder="Telephone" type="text"  
+                    [ngClass]="{'is-invalid':submitted && formControls.telephone.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && formControls.telephone.errors">
+                      <label *ngIf="formControls.telephone.errors.required">This Field is Required</label>
+                      <label *ngIf="formControls.telephone.errors.minLength">Enter Correct Telephone</label>
+                    </div>
+                 
+                </div>
+
+                <div class="form-group">
+                 
+                    
+                    <input formControlName="email" class="form-control" placeholder="Email" type="email"  [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">Enter Correct Email</div>
+                 
+                </div>
+
+                <div class="form-group">
+                  
+                    
+                    <input formControlName="address" class="form-control" placeholder="Address" type="text" (focus)="focus1=true" (blur)="focus1=false" [ngClass]="{'is-invalid':submitted && formControls.address.errors}"> 
+                    <div class="invalid-feedback" *ngIf="submitted && formControls.address.errors">This Field is Required</div>
+                  
+                </div>
+
+                <div class="form-group">
+                  
+                    
+                  <input formControlName="area" class="form-control" placeholder="area" type="text" (focus)="focus1=true" (blur)="focus1=false" [ngClass]="{'is-invalid':submitted && formControls.area.errors}"> 
+                  <div class="invalid-feedback" *ngIf="submitted && formControls.area.errors">This Field is Required</div>
+                
+              </div>
+
+                
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                   
+                    <input formControlName="password" class="form-control" placeholder="Password (You must need to remember for Login after registration)" type="password" (focus)="focus2=true" (blur)="focus2=false" [ngClass]="{'is-invalid':submitted && formControls.password .errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && formControls.password.errors">
+                      <label *ngIf="formControls.password.errors.required">This Field is Required</label>
+                      <label *ngIf="formControls.password.errors.minLength">Need Atleast 6 characters</label>
+                    </div>
+                  </div>
+                </div>
+
+               
+               
+             <!---   <div class="row my-4">
+                  <div class="col-12">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                      <label class="custom-control-label" for="customCheckRegister">
+                        <span>I agree with the
+                          <a href="javascript:void(0)">Privacy Policy</a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>  --->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">SignUp</button>
+                  
+                </div>
+                
+              </form>
+              <div class="alert alert-info" *ngIf="showSuccessMessage">
+                Submitted Sucessfully
+              </div>
+             
+            </div>
+            
+             
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+

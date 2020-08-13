@@ -1,0 +1,114 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-1 bg-gradient-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <!--<div class="card-header bg-white pb-5">
+              <div class="text-muted text-center mb-3">
+                <small>Sign in with</small>
+              </div>
+              <div class="btn-wrapper text-center">
+                <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon">
+                    <img src="./assets/img/icons/common/github.svg">
+                  </span>
+                  <span class="btn-inner--text">Github</span>
+                </a>
+                <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon">
+                    <img src="./assets/img/icons/common/google.svg">
+                  </span>
+                  <span class="btn-inner--text">Google</span>
+                </a>
+              </div>
+            </div>-->
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-muted text-center mb-3">
+                <img src="../../assets/img/project - Copy.JPG" sizes="container pt-sm-sm">
+                <h3>Welcome to WedhaGedara</h3>
+              </div>
+
+              <!-- <form role="form" [formGroup]="LoginForm" (ngSubmit)="onLoginSubmit()">
+                <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
+                  <span *ngIf="(!LoginForm.get('email').valid && LoginForm.touched) || (!LoginForm.get('pwd').valid && LoginForm.get('pwd').touched)" class="txt text-lighter" >Please Enter valid email and the Password</span>
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" formControlName="email" type="email" required (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" formControlName="pwd" type="password" required (focus)="focus1=true" (blur)="focus1=false">
+                  </div>
+                </div>
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <label class="custom-control-label" for=" customCheckLogin">
+                    <span>Remember me</span>
+                  </label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                </div>
+              </form> -->
+
+              <form (ngSubmit)="onSignin(f)" #f=ngForm>
+                <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Email" ngModel #email="ngModel" required (focus)="focus=true" (blur)="focus=false">
+                  <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required.</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      <input type="password" id="password" class="form-control" name="password" ngModel #pwd="ngModel" placeholder="Password" required (focus)="focus1=true" (blur)="focus1=false">
+                      <div *ngIf="pwd.invalid && pwd.touched" class="validation-error">This field is required.</div>
+                    </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+              </form>
+
+              <div class="row mt-3">
+                <div class="col-6">
+                  <a [routerLink]="['/Forgetpwd']" class="text-light">
+                    <small>Forgot password?</small>
+                  </a>
+                </div>
+                <div class="col-6 text-right">
+                  <a [routerLink]="['/register/spa']" class="text-light">
+                    <small>Create new account</small>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,109 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+        <!-- Circles background -->
+        <div class="shape shape-style-1 shape-primary alpha-4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="javascript:void(0)">
+                                    <img src="./assets/img/theme/doctor.jpg" class="rounded-circle">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 140px;">
+                        <h3>{{searched_user_infor.name}} </h3>
+                        <h3>
+                            <span class="font-weight-light"> {{!!searched_user_infor.specialization ? searched_user_infor.specialization : search_params.specialization}}</span>
+                        </h3>
+                        <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{searched_user_infor.area}}
+                        </div>
+                        <!--              <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{searched_user_infor.price}}</div>-->
+                    </div>
+                    <div class="mt-5 py-5 border-top text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div *ngFor="let channeling_time_slot of channeling_time_slots">
+                                    <div class=" shadow shadow-lg--hover mt-5">
+                                        <div class="">
+                                            <div class="alert alert-primary" role="alert">
+                                                <div class="display-4">{{channeling_time_slot.hospital}} <span
+                                                        class="font-weight-light">{{channeling_time_slot.location}}</span>
+                                                </div>
+                                            </div>
+                                            <div *ngFor="let day_timeslots of channeling_time_slot.timeslots">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center">
+                                                        <span class="btn-inner--icon" style="padding-right: 10px;">
+                                                          <i class="ni ni-calendar-grid-58"></i>
+                                                        </span>
+                                                            <strong>{{day_timeslots.date}}</strong>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">#</th>
+                                                        <th class="text-center">Time</th>
+                                                        <th class="text-center">Availability</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr *ngFor="let timeslot of day_timeslots.time_slots; index as i">
+                                                        <td class="text-center">
+                                                            {{i+1}}
+                                                        </td>
+                                                        <td class="text-center">
+                                                            {{timeslot}}
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <span class="badge badge-pill badge-success">Available</span>
+                                                        </td>
+                                                        <td class="btn-wrapper text-center">
+                                                            <button (click)="navigateToChannelingPatientDetailPage(channeling_time_slot.hospital, channeling_time_slot.location, day_timeslots.date, timeslot)"
+                                                                    class="btn btn-icon btn-3 btn-primary"
+                                                                    type="button">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="ni ni-watch-time"></i></span>
+                                                                <span class="btn-inner--text">Reserve a Time Slot Now</span>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+  

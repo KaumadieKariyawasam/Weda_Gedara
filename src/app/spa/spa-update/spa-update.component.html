@@ -1,0 +1,94 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-7 py-lg-7">
+              <button class="btn btn-primary" (click)="goView()"> Back</button>
+              <button class="btn btn-primary" (click)="goGallery()"> Update Gallery</button>
+              
+              <div class="form-group">
+                <label> Upload profile picture</label>
+                <input type="file" id="$img" (change)="upload($event)" class="form-control" formControlName="image" accept=".png,.jpg">
+                
+              </div>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+               
+                <p> SpaName</p>
+                  
+                <div class="form-group">
+                    <input formControlName="spaname"  name="spaname" value="{{spaname}}" class="form-control" type="text" >
+                </div>
+
+                <p>Add a Description</p>
+
+                <div class="form-group">
+                  <textarea formControlName="description" class="form-control"  value="{{description}}"></textarea>
+                </div>
+              
+                <p> Spa Registration Number </p>
+                <div class="form-group">
+                    <input formControlName="reg_no" class="form-control" value="{{reg_no}}" type="text" >
+                  
+                </div>
+
+                <p>Telephone</p>
+                <div class="form-group">
+                  <input formControlName="telephone" class="form-control" value="{{telephone}}" type="text">  
+                </div>
+
+                <p>Email</p>
+                <div class="form-group">
+                    <input formControlName="email" class="form-control"  value="{{email}}" type="text">  
+                </div>
+
+                <p>Link of WebSite</p>
+                <div class="form-group">  
+                    <input formControlName="web" class="form-control" value="{{web}}" type="text">
+                </div>
+
+                <p>Address</p>
+                <div class="form-group">
+                   <input formControlName="address" class="form-control" value="{{address}}" type="text">
+                </div>
+
+                <p> Admin Email</p>
+                <div class="form-group">
+                 <input formControlName="admin_email" class="form-control" value="{{admin_email}}" type="email">
+                </div>
+               
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+                
+              </form>
+             
+
+
+            </div>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+

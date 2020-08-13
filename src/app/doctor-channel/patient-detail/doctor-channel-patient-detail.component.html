@@ -1,0 +1,161 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+        <!-- Circles background -->
+        <div class="shape shape-style-1 shape-primary alpha-4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                    <div class=" shadow shadow-lg--hover mt-5">
+                        <div class="">
+                            <div class="pl-4">
+                                <div class="align-items-center justify-content-center">
+                                    <div class="row" style="padding-top: 25px;">
+                                        <div class="col-3">
+                                            <div class="">
+                                                <img src="./assets/img/theme/doctor.jpg"
+                                                     class="rounded-circle img-center img-fluid shadow shadow-lg--hover justify-content-center"
+                                                     style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <h3>Dr. {{selected_doctor.name}}</h3>
+                                            <h5 class="title">
+                                                <span class="d-block mb-1">{{selected_doctor.specialization}}</span>
+                                                <small class="h6 text-muted">{{selected_doctor.area}}</small>
+                                            </h5>
+                                        </div>
+                                        <div class="col-4 btn-wrapper text-center">
+                                            <ul class="list-unstyled">
+                                                <li class="py-2">
+                                                    <div class="d-flex align-items-center">
+                                                        <div>
+                                                            <div class="badge badge-circle badge-success mr-3">
+                                                                <i class="ni ni-square-pin"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">{{channelingTimeSlot.hospital}} <span
+                                                                    class="font-weight-light">, {{channelingTimeSlot.location}}</span>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="py-2">
+                                                    <div class="d-flex align-items-center">
+                                                        <div>
+                                                            <div class="badge badge-circle badge-success mr-3">
+                                                                <i class="ni ni-calendar-grid-58"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">{{channelingTimeSlot.date}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="py-2">
+                                                    <div class="d-flex align-items-center">
+                                                        <div>
+                                                            <div class="badge badge-circle badge-success mr-3">
+                                                                <i class="ni ni-time-alarm"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">{{channelingTimeSlot.time}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="py-2">
+                                                    <div class="d-flex align-items-center">
+                                                        <div>
+                                                            <div class="badge badge-circle badge-success mr-3">
+                                                                <i class="ni ni-single-02"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">1 Appointment</h6>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 py-5 border-top">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div class="text-muted text-center mb-3">
+                                    <h4 style="text-transform: capitalize; text-align: center;">Patient Details</h4>
+                                </div>
+                                <form (ngSubmit)="onClickContinue(f)" #f=ngForm>
+                                    <div class="form-group">
+                                        <div class="">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                                <input type="text" id="patientName" class="form-control"
+                                                       name="patientName" placeholder="Patient's Name"  [(ngModel)]="patient.name"
+                                                       #patientName="ngModel" required (focus)="focus=true"
+                                                       (blur)="focus=false">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                            <input type="text" id="nationalIdCardNumber" class="form-control" name="nationalIdCardNumber"
+                                                   [(ngModel)]="patient.nic" #nationalIdCardNumber="ngModel" placeholder="NIC" required
+                                                   (focus)="focus1=true" (blur)="focus1=false" minlength="10" maxlength="10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                                            <input type="text" id="mobileNumber" class="form-control" name="mobileNumber"
+                                                   [(ngModel)]="patient.mobile" #mobileNumber="ngModel" placeholder="Mobile Number" required
+                                                   (focus)="focus1=true" (blur)="focus1=false" minlength="10" maxlength="10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                <input type="email" id="email" class="form-control" name="email"
+                                                       placeholder="Email"  [(ngModel)]="patient.email" #email="ngModel" required
+                                                       (focus)="focus=true" (blur)="focus=false">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="float:right;">
+                                        <button type="submit" class="btn btn-primary">Continue >>></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+  

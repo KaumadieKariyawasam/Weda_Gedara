@@ -1,0 +1,71 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-7 py-lg-7">
+             
+              <form [formGroup]="form">
+
+                <div class="form-group">
+                  <button class="btn btn-primary" (click)="goView()">Back</button>
+                </div>
+
+                <h2 style="color: green;">Add New Article </h2>
+
+                <div class="form-group">
+                  <textarea  id="area" formControlName="article" class="form-control" style="height: 200px;"></textarea>
+                </div>
+
+               
+               <div class="form-group">
+                  <button class="btn btn-primary" onclick="document.getElementById('area').value = ''" (click)="createArticle()">Create</button>
+                </div>
+
+
+                <ng-container>
+                  <div *ngFor="let art of article">
+                    <form [formGroup]="form">
+                      <p><b>{{art.article}}</b></p>
+                      <div>
+                        <button style="background-color: black; width: 3cm; color: aliceblue;" onclick="document.getElementById('popup').style.display='block'">Edit</button>
+                        <button style="background-color: black; width: 3cm; color: aliceblue;" (click)="delete(art.random)">Delete</button>
+                        <div class="form-group" id="popup" style="display: none;" class="form-group">
+                        <textarea style="height: 150px;" formControlName="article" class="form-control" value="{{art.article}}"></textarea>
+                        <button class="btn btn-primary" (click)="update(art.random)">Update</button>
+                      </div>
+                      </div>
+                    </form>
+                                    
+                  </div>
+                  </ng-container>
+                
+              </form>
+             
+
+
+            </div>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+

@@ -1,0 +1,162 @@
+<main>
+  <div class="position-relative">
+    <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-default">
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-6 text-center">
+                <img src="./assets/img/brand/weda-gedara-horizontal-logo.png" style="width: 500px;" class="img-fluid">
+                <p class="lead text-white">Search for Medical supplier</p>
+                <div class="mt-5">
+                  <input class="form-control" placeholder="Search" (focus)="focus=true" type="text" [(ngModel)]="name" (change)="filterName('fullname', name)">
+                  <input class="form-control" placeholder="Area" type="text" [(ngModel)]="area" (change)="filterArea('area', area)">
+                  <!--<input type="text" [(ngModel)]="searchterm" (keydown)="search($event)">-->
+                  <!-- <button (click)="send()">Sort low to high</button><button (click)="send2()">Sort high to low</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </section>
+
+
+    <section class="section section-lg">
+      <div class="container col-lg-12">
+          <div class="col-lg-12 order-lg-1">
+            
+              <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
+                  <div class="container">
+                    <a class="navbar-brand" href="javascript:void(0)" >Filters</a>
+                    <div class="collapse navbar-collapse" id="navbar-primary">
+                      <div class="navbar-collapse-header">
+                        <div class="row">
+                          <div class="col-6 collapse-brand">
+                            <a href="javascript:void(0)">
+                              <img src="./assets/img/brand/blue.png">
+                            </a>
+                          </div>
+                          <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                              <span></span>
+                              <span></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item" ngbDropdown placement="bottom-right">
+                          <a class="nav-link no-caret" id="navbar-primary_dropdown_1" ngbDropdownToggle>Order by</a>
+                          <div class="dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1" ngbDropdownMenu>
+                            <a class="dropdown-item" (click)="send()">Price low to high</a>
+                            <a class="dropdown-item" (click)="send2()">Price high to low</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                </div>
+
+          <!-- <ul *ngFor="let results of filteredNames">
+            <li>Name: {{results.name}}</li>
+            <li>Area: {{results.area}}</li>
+            <li>Price: {{results.price}}</li>
+          </ul> -->
+          <div class="container col-lg-12">
+              <div class="row">
+                  <div class="col-lg-6">
+                  <div class="col-lg-12 order-lg-1">
+                    
+                      
+        
+                  <!-- <ul *ngFor="let results of filteredNames">
+                    <li>Name: {{results.name}}</li>
+                    <li>Area: {{results.area}}</li>
+                    <li>Price: {{results.price}}</li>
+                  </ul> -->
+                  
+                    <ul *ngFor="let results of filteredNames">
+                      
+                        <div class="card shadow shadow-lg--hover mt-5">
+                            <div class="card-body">
+                              <div class="">
+                                <!-- <div>
+                                  <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                    <i class="ni ni-satisfied"></i>
+                                  </div>
+                                </div> -->
+                                <div class="pl-4">
+                                  <!-- <h5 class="title text-success">Name: {{results.name}}</h5> -->
+                                  <div class="align-items-center justify-content-center">
+                                      <div>
+                                        <img src="{{results.image}}" class="rounded-circle img-center img-fluid shadow shadow-lg--hover justify-content-center" style="width: 150px;">
+                                      </div>
+                                    <div>
+                                      <h5 class="title">Name: {{results.fullname}}</h5>
+                                      <h6>Area: {{results.area}}</h6>
+                                      <div [(ngModel)]="query">query: {{results.address}}</div>
+                                      <a [routerLink]="['/supplier-searchview',results.email]" class="btn text-warning">Learn more</a>
+                                      <a class="align-right" (click)="map.places(results.address)" class="btn text-warning">View in Map</a>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                            </div>
+                          </div>
+                      </div>
+                      
+                    </ul>
+                    </div>
+              
+               
+            </div>
+            <div class="col-lg-6">
+                <!-- <div style="padding: 10px 0">
+                    <input type="text" placeholder="Search places..." [(ngModel)]="query" />
+                    <button (click)="map.places(query)">Search</button>
+                  </div> -->
+                  <br>
+                  <br>
+                  <app-here-map
+                      #map
+                      appId="dEEdGD6uiM6hVekdkDRN"
+                      appCode="jHGKZGEWasB3y4Ql5QlV8w"
+                      lat="6.93195"
+                      lng="79.84556"
+                      width="100%"
+                      height="530px">
+                  </app-here-map>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </section>
+          
+
+          </div>
+
+</main>
+

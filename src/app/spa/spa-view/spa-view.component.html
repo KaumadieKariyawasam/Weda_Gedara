@@ -1,0 +1,125 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-7 py-lg-7">
+              <div class="text-center text-muted mb-4">
+                <h1 style="color:crimson; font: size 5px"><b>{{spaname}} </b></h1>
+              
+              </div>
+              
+              
+
+                <div class="card-body px-lg-10 py-lg-7">
+                  <a href="{{file}}">
+                  <img src="{{file}}" width="600" height="320">
+                </a>
+                    <p style="font-size: 17px; font-weight: bold;"> RegN0       :{{reg_no}}<br>
+                    WebLinks         :  <a href="{{web}}"> {{web}} </a><br>
+                   Address         :{{address}}, {{area}} <br>
+
+                    Telephone       :{{telephone}}<br>
+                   Email        :{{email}}<br>
+                   </p>
+
+                   <div>
+                    <button style="background-color: black; width: 5cm; height: 1.2cm; color: aliceblue;" (click)="viewArticle()">View Article</button>
+                   </div>
+                   <div>
+                    <h3 style="color: red;">Gallery</h3>
+  
+                    <div class="row">
+  
+                      <div *ngFor="let gal of gallery">
+                                      
+                               
+                        <div class="col-3">
+                          <a href="{{gal.image}}">
+                          <img src="{{gal.image}}" width="150px" height="150px" >
+                          </a><br>
+                         
+                        </div>
+                        
+                      
+                    
+                    </div>
+                    </div>
+  
+                  </div>
+                   <p style="font-size:30px;"><b>{{description}}</b></p>
+
+                   
+               
+
+
+               
+
+              </div>
+                
+                <div>
+                  <button class="btn btn-primary" (click)="goUpdate()">Update</button>
+                  
+                  <button class="btn btn-primary" onclick="document.getElementById('popup').style.display='block'">Delete</button>
+                </div>
+                
+            
+                <div id="popup" style="display: none;align-items: center;">
+                  <div class="text-center text-muted mb-4">
+                    <h1 style="color: cornflowerblue; font: size 5px"><b>Confirm your account delail</b></h1>
+                  </div>
+                  <form [formGroup]="form">
+                
+
+                    <div class="form-group">
+                    
+                       
+                        <input formControlName="email" class="form-control" placeholder="Email" type="email" (focus)="focus1=true" (blur)="focus1=false" [ngClass]="{'is-invalid':submitted && formControls.admin_email .errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.admin_email.errors">Invalid email</div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group input-group-alternative">
+                       
+                        <input formControlName="password" class="form-control" placeholder="Password" type="password" (focus)="focus2=true" (blur)="focus2=false" [ngClass]="{'is-invalid':submitted && formControls.password .errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.password.errors">
+                          This Field is required
+                        </div>
+                      </div>
+                    </div>
+             
+                    <div class="form-group">
+                      <button class="btn btn-primary submit w-100" (click)="onDelete()">Confirm</button>
+                      
+                    </div>
+                    
+                  </form>
+                
+                </div>
+
+            </div>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+

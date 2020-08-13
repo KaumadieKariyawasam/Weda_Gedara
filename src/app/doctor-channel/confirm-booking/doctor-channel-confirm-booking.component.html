@@ -1,0 +1,229 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+        <!-- Circles background -->
+        <div class="shape shape-style-1 shape-primary alpha-4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                    <div class="mt-5 py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div class="">
+                                    <div class="alert alert-primary text-muted text-center mb-3" role="alert">
+                                        <h4 style="text-transform: capitalize; text-align: center;"><strong>Patient
+                                            Details</strong></h4>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <div class="">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="ni ni-single-02"></i></span>
+                                                    <span class="input-group-text" style="width:25%;"><h6><strong>Patient's Name</strong></h6></span>
+                                                    <span class="input-group-text"
+                                                          style="width:75%;"><h6>{{patientDetail.name}}</h6></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                                <span class="input-group-text"
+                                                      style="width:25%;"><h6><strong>NIC Number</strong></h6></span>
+                                                <span class="input-group-text" style="width:75%;"><h6>{{patientDetail.nic}}</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="ni ni-mobile-button"></i></span>
+                                                <span class="input-group-text" style="width:25%;"><h6><strong>Mobile Number</strong></h6></span>
+                                                <span class="input-group-text" style="width:75%;"><h6>{{patientDetail.mobile}}</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                    <span class="input-group-text" style="width:25%;"><h6><strong>Email Address</strong></h6></span>
+                                                    <span class="input-group-text"
+                                                          style="width:75%;"><h6>{{patientDetail.email}}</h6></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="alert alert-primary text-muted text-center mb-3" role="alert">
+                                        <h4 style="text-transform: capitalize; text-align: center;"><strong>Appointment
+                                            Details</strong></h4>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <div class="">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="ni ni-single-02"></i></span>
+                                                    <span class="input-group-text" style="width:25%;"><h6><strong>Doctor's Name</strong></h6></span>
+                                                    <span class="input-group-text"
+                                                          style="width:75%;"><h6>Dr. {{selected_doctor.name}} </h6></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="ni ni-paper-diploma"></i></span>
+                                                <span class="input-group-text" style="width:25%;"><h6><strong>Specialization</strong></h6></span>
+                                                <span class="input-group-text" style="width:75%;"><h6>{{selected_doctor.specialization}}</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-time-alarm"></i></span>
+                                                <span class="input-group-text"
+                                                      style="width:25%;"><h6><strong>Time Slot</strong></h6></span>
+                                                <span class="input-group-text" style="width:75%;"><h6>Session starts at {{channelingTimeSlot.time}} on {{channelingTimeSlot.date}}</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="ni ni-building"></i></span>
+                                                    <span class="input-group-text" style="width:25%;"><h6><strong>Location</strong></h6></span>
+                                                    <span class="input-group-text" style="width:75%;"><h6>{{channelingTimeSlot.hospital}} - {{channelingTimeSlot.location}}</h6></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="alert alert-primary text-muted text-center mb-3" role="alert">
+                                        <h4 style="text-transform: capitalize; text-align: center;"><strong>Payment
+                                            Details</strong></h4>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class=""
+                                                      style="width:60%;"><h6><strong>Hospital Charge</strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6>=</h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class="" style="width:30%;"><h6>600.00</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class=""
+                                                      style="width:60%;"><h6><strong>Doctor Charge</strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6>=</h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class="" style="width:30%;"><h6>1000.00</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class=""
+                                                      style="width:60%;"><h6><strong>Booking Charge</strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6>=</h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class="" style="width:30%;"><h6>100.00</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="" style="width:60%;"><h6><strong></strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6></h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class=""
+                                                      style="width:30%;"><h6>______________</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="" style="width:60%;"><h6><strong>Total</strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6></h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class=""
+                                                      style="width:30%;"><h6>1700.00</h6></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="" style="width:60%;"><h6><strong></strong></h6></span>
+                                            </div>
+                                            <div class="col-1">
+                                                <span class="" style="width:5%;"><h6>=</h6></span>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <span class=""
+                                                      style="width:30%;"><h6>===========</h6></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div style="float:right;">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmModal">Save</button>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmModalLabel">Confirm Channeling</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                               Do you wish to confirm the channeling?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                                                <button type="button" class="btn btn-primary">YES</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+  

@@ -1,0 +1,30 @@
+<h2>Doctors</h2>
+<div class="mat-elevation-z8">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Area</th>
+        <th scope="col">verified</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of doctors">
+        <td>{{ doctor.payload.doc.data().DisplayName }}</td>
+        <td>{{ doctor.payload.doc.data().area }}</td>
+        <td>{{ doctor.payload.doc.data().status }}</td>
+        <td [hidden]="doctor.payload.doc.data().completed" 
+          (click)="deleteDoctor(doctor)">
+          <i class="material-icons">delete_forever</i>
+        </td>
+        <td 
+            (click)="markVerify(doctor)">
+            <i class="material-icons">check</i>
+        </td>
+      </tr>
+      </tbody>
+      </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

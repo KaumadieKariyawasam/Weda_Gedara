@@ -1,0 +1,149 @@
+<main>
+    <div class="position-relative">
+        <!--Start - Top search pannel-->
+        <section class="section section-lg section-hero section-shaped">
+            <!-- Background circles -->
+            <div class="shape shape-style-1 shape-default">
+                <span class="span-150"></span>
+                <span class="span-50"></span>
+                <span class="span-50"></span>
+                <span class="span-75"></span>
+                <span class="span-100"></span>
+                <span class="span-75"></span>
+                <span class="span-50"></span>
+                <span class="span-100"></span>
+                <span class="span-50"></span>
+                <span class="span-100"></span>
+            </div>
+            <div class="container shape-container d-flex align-items-center py-lg">
+                <div class="col px-0">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-9 text-center">
+                            <div class="col-lg-12 text-center">
+                                <div>
+                                    <img src="./assets/img/brand/weda-gedara-horizontal-logo.png" style="width: 500px;"
+                                         class="img-fluid">
+                                </div>
+                                <div>
+                                    <p class="lead text-white">Search for Channeling Doctor</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <input class="form-control" placeholder="Name of the Doctor"
+                                               (focus)="focus=true"
+                                               type="text"
+                                               [(ngModel)]="search_doctor_params.name"
+                                               (change)="filterDoctors('name', search_doctor_params.name)">
+                                    </div>
+                                    <div class="col dropdown">
+                                        <select class="form-control" data-toggle="select" title="Doctor's Specification"
+                                                data-live-search="true" data-placeholder="Specification"
+                                                data-minimum-results-for-search="Infinity"
+                                                (focus)="focus=true"
+                                                type="text"
+                                                [(ngModel)]="search_doctor_params.specialization"
+                                                (change)="filterDoctors('specialization', search_doctor_params.specialization)">
+                                            <option *ngFor="let specification of default_specifications"
+                                                    [value]="specification.code">
+                                                {{specification.description}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="ni ni-calendar-grid-58"></i></span>
+                                            </div>
+                                            <input class="form-control datepicker"
+                                                   placeholder="Channeling Date" name="dp"
+                                                   [(ngModel)]="search_doctor_params.channelingDate"
+                                                   ngbDatepicker #d="ngbDatepicker"
+                                                   (click)="d.toggle()" type="text"
+                                                   (ngModelChange)="filterDoctors('channelingDate', search_doctor_params.channelingDate)"/>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" placeholder="Area" type="text"
+                                               [(ngModel)]="search_doctor_params.area"
+                                               (change)="filterDoctors('area', search_doctor_params.area)">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SVG separator -->
+            <div class="separator separator-bottom separator-skew zindex-100">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+
+        </section>
+        <!--End - Top search pannel-->
+        <!--Start - Botton Search Results View pannel-->
+        <section class="section section-lg">
+            <div class="container col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-12 order-lg-1">
+                            <!--Start - Repeatedly generate Doctors list-->
+                            <ul *ngFor="let doctor of filtered_doctors">
+                                <div class="card shadow shadow-lg--hover mt-5">
+                                    <div class="card-body">
+                                        <div class="pl-4">
+                                            <div class="align-items-center justify-content-center">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="">
+                                                            <img src="./assets/img/theme/doctor.jpg"
+                                                                 class="rounded-circle img-center img-fluid shadow shadow-lg--hover justify-content-center"
+                                                                 style="width: 150px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h3>Dr. {{doctor.name}}</h3>
+                                                        <h5 class="title">
+                                                            <span class="d-block mb-1">{{doctor.specialization}}</span>
+                                                            <small class="h6 text-muted">{{doctor.area}}</small>
+                                                        </h5>
+                                                        <a [routerLink]="['/doctor-view', doctor.name]"
+                                                           class="btn text-warning text-left">View Profile</a>
+                                                    </div>
+                                                    <div class="col-3 btn-wrapper text-center">
+                                                        <button (click)="navigateToChannelingTimeSlotPage(doctor)"
+                                                                class="btn btn-icon btn-3 btn-primary margin-top-55" type="button" style="margin-top: 55px;">
+                                                            <span class="btn-inner--icon"><i class="ni ni-watch-time"></i></span>
+                                                            <span class="btn-inner--text">Channel Now</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                            <!--End - Repeatedly generate Doctors list-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--End  - Botton Search Results View pannel-->
+
+    </div>
+
+</main>
+  
+  

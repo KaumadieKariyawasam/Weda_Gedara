@@ -1,0 +1,36 @@
+<!-- <div class="card shadow shadow-lg--hover mt-5">
+  <div class="card-body" >
+    <div class="d-flex px-3">
+      <div>
+        <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+          <i class="ni ni-active-40"></i>
+        </div>
+      </div>
+      <div class="pl-4" routerLinkActive="active" [routerLink]="[index]">
+        <h5 class="title text-warning">Titile: {{ artical.title }} </h5>
+        <p class="text-darker">Content: {{ artical.Content }} </p>
+        <p class="text-capitalize">Published: {{ artical.Published }} </p>
+        <p class="text-success">id: {{ artical.id }} </p>
+        <a href="javascript:void(0)" class="text-warning">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<a [routerLink]="['/blogview',artical.id]" class="" routerLinkActive="active">
+  <div class="pull-left col-lg-12 order-lg-1">
+    <h4 class="list-group-item-heading row justify-content-center">{{ artical.title }} </h4>
+    <div class="mt-5 py-5 border-top text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <p>{{artical.Content}}</p>
+        </div>
+      </div>
+    </div>
+    <p class="">Published on: {{ artical.date }} </p>
+    <p class="">Author: {{ artical.Author }} </p>
+  </div>
+  <span class="pull-right">
+  <!-- <img [src]="" alt="{{artical.img}}" class="img-resposive"> -->
+  </span>
+</a>

@@ -1,0 +1,66 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-hello" style="background-image:linear-gradient(
+      rgba(20,20,20, .5), 
+      rgba(20,20,20, .5)),url(./assets/img/theme/test.jpg)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card bg-secondary shadow border-0">
+
+            <div class="card-body px-lg-7 py-lg-7">
+
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <p> Name</p>
+
+                <div class="form-group">
+                    <input formControlName="DisplayName" class="form-control"  value="{{ DisplayName }}" type="text" >
+                </div>
+
+                <p>Email</p>
+                <div class="form-group">
+                    <input formControlName="email" class="form-control"  value="{{ email }}" type="text" >
+                </div>
+
+
+                <p>Address</p>
+                <div class="form-group">
+                   <input formControlName="address" class="form-control" value="{{ address }}" type="text" >
+                </div>
+
+                <p>Area</p>
+                <div class="form-group">
+                   <input formControlName="area" class="form-control" value="{{ area }}" type="text" >
+                </div>
+
+                <p>Gender</p>
+                <div class="form-group">
+                   <input formControlName="gender" class="form-control" value="{{ gender }}" type="text" >
+                </div>
+
+                <p>NIC</p>
+                <div class="form-group">
+                   <input formControlName="nic" id="nic" class="form-control" value="{{ nic }}" type="text"  >
+                </div>
+
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+

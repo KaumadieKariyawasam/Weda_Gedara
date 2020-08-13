@@ -1,0 +1,35 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h4>Admin</h4>
+            <h6>{{adminemail}}</h6>
+        </div>
+        <img src="./assets/img/theme/doctor.jpg" alt="Admin">
+    </div>
+    
+    <mat-divider></mat-divider>
+    
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/default">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="doctors">Doctors</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="medlist">Medical Suppliers</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="spalist">Spas</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="userlist">Users</a>
+    
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Tools</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>import_contacts</mat-icon>
+        Contact
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>contact_phone</mat-icon>
+        Leads
+    </a>
+   
+</mat-nav-list>
+
